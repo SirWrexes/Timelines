@@ -1,0 +1,23 @@
+digraph "2023-11-21" {
+  node [shape = plaintext];
+  "08:40" -> "09:30";
+  "09:30" -> "10:00";
+  "10:00" -> "10:30";
+  "10:30" -> "11:00";
+  "11:00" -> "11:25";
+  "11:25" -> "11:30";
+  "11:30" -> "11:50";
+  "11:50" -> future;
+  // ":" -> future;
+
+
+  node [shape = box];
+  {rank = same; "08:40" "La vie c'est dur wesh"};
+  {rank = same; "09:30" "Debout"};
+  {rank = same; "10:00" "P'tit dej/café"};
+  {rank = same; "10:30" "Discussion BHC: Heures, Jira, méthode de planification et conception d'app"};
+  {rank = same; "11:00" "Douche/brossage de dents"};
+  {rank = same; "11:25" "Google: \"How to make a timeline with GraphViz\""};
+  {rank = same; "11:30" "Création première timeline (les suivantes se feront en un temps négligeable)"};
+  {rank = same; "11:50" "✓ Boulot"};
+}
