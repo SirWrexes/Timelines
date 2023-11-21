@@ -1,0 +1,9 @@
+#!/bin/bash
+
+MODELS=$(fd -tf "model.dot")
+
+for model in $MODELS; do
+  dir=$(dirname $model)
+  dot ${model} -Tsvg > "${dir}/graph.svg"
+  dot ${model} -Tpng > "${dir}/graph.png"
+done;
