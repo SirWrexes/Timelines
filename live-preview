@@ -5,18 +5,29 @@ die() {
  exit 1
 }
 
-[[ -z "${1}"   ]] && die "Please provide the path to a graph file to visualise live updates for."
+[[ -z "${1}" ]] && die "Please provide the date to get timeline live updates for."
 
-[[ -z "${1##*.{png,svg}}" ]] && die "${1} is not a generated graph image."
+[[ \
+  -z $(echo -n ${1} | perl -pe 's/202\d\/\d{2}\/\d{2}//') \
+  && -d "${PWD}/${1}"
+]] || die "${1} is not a workday timeline directory."
 
 command -v kitty       >/dev/null || die 'This script needs to be run inside Kitty terminal to be able to display pictures.'
 command -v inotifywait >/dev/null || die 'This script requires `inotifywait` to wait for file modifications.'
 
 shopt -s globstar
 
+trap break SIGINT
+
 while true; do
   clear
   git generate
-  kitty +kitten icat ${1}
+  kitty +kitten icat ${1}/graph.png
   inotifywait -e modify **/*.dot
 done
+
+trap - SIGINT
+
+echo -e '\nStopped by user.'
+
+: exit 0

@@ -1,0 +1,15 @@
+digraph "2023-11-22" {
+  node [shape = plain];
+  "10:00" -> "11:00" [label = "Émergence (*grosses* difficultés à m'endormir hier)"];
+  "11:00" -> "11:30" [label = "Café/P'tit dej"];
+  "11:30" -> "13:45" [label = "✓ Boulot"];
+  "13:45" -> "14:45" [label = "Lasang"];
+  "14:45" -> "14:50" [label = "Café"];
+  "14:50" -> "20:25" [label = "✓ Boulot"];
+  "20:25" -> "21:45" [label = "Semi boulot (vidéos sur le côté pour décompresser)"];
+
+
+  node [shape = box];
+  {rank = same; "10:00" -> "Réveil"};
+  {rank = same; "11:00" -> "Debout"};
+}
