@@ -1,23 +1,22 @@
 digraph "2023-11-21" {
   node [shape = plaintext];
-  "08:40" -> "09:30";
-  "09:30" -> "10:00";
-  "10:00" -> "10:30";
-  "10:30" -> "11:00";
-  "11:00" -> "11:25";
-  "11:25" -> "11:30";
-  "11:30" -> "11:50";
-  "11:50" -> future;
-  // ":" -> future;
-
+  "08:40" -> "09:30" [label = "La vie c'est dur wesh"];
+  "09:30" -> "10:00" [label = "Café/P'tit dej"];
+  "10:00" -> "10:30" [label = "Discussion BHC: Heures, Jira, méthode de planification et conception d'app"];
+  "10:30" -> "11:00" [label = "Douche/brossage de dents"];
+  "11:00" -> "11:25" [label = "Google: \"How to make a timeline with GraphViz\""];
+  "11:25" -> "11:30" [label = "Création timeline"];
+  "11:30" -> "11:50" [label = "✓ Boulot"];
+  "11:50" -> "12:00" [label = "Café/Jira"];
+  "12:00" -> "14:25" [label = "✓ Boulot"];
+  "14:25" -> "14:30" [label = "Café/Papouilles Lady"];
+  "14:30" -> "16:30" [label = "✓ Boulot"];
+  "16:30" -> "17:05" [label = "Pause chill/Discord"];
+  "17:05" -> "18:05" [label = "✓ Boulot"];
+  "18:05" -> "22:40" [label = "Install/test Stable Diffusion"];
 
   node [shape = box];
-  {rank = same; "08:40" "La vie c'est dur wesh"};
-  {rank = same; "09:30" "Debout"};
-  {rank = same; "10:00" "P'tit dej/café"};
-  {rank = same; "10:30" "Discussion BHC: Heures, Jira, méthode de planification et conception d'app"};
-  {rank = same; "11:00" "Douche/brossage de dents"};
-  {rank = same; "11:25" "Google: \"How to make a timeline with GraphViz\""};
-  {rank = same; "11:30" "Création première timeline (les suivantes se feront en un temps négligeable)"};
-  {rank = same; "11:50" "✓ Boulot"};
+  {rank = same; "08:40" -> "Réveil"};
+  {rank = same; "09:30" -> "Debout"};
+  {rank = same; "18:05" -> "Aurel arrive dans ma chambre et met fin à mes espoirs de faire mes heures. 😭"};
 }
