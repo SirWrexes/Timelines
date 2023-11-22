@@ -1,0 +1,22 @@
+#!/bin/sh
+
+die() {
+ echo ${1}
+ exit 1
+}
+
+[[ -z "${1}"   ]] && die "Please provide the path to a graph file to visualise live updates for."
+
+[[ -z "${1##*.{png,svg}}" ]] && die "${1} is not a generated graph image."
+
+command -v kitty       >/dev/null || die 'This script needs to be run inside Kitty terminal to be able to display pictures.'
+command -v inotifywait >/dev/null || die 'This script requires `inotifywait` to wait for file modifications.'
+
+shopt -s globstar
+
+while true; do
+  clear
+  git generate
+  kitty +kitten icat ${1}
+  inotifywait -e modify **/*.dot
+done
