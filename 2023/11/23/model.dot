@@ -1,0 +1,16 @@
+digraph "2023-11-23" {
+  node [shape = plain];
+  "11:00" -> "11:45"  [label = "Émergence"];
+  "11:45" -> "11:50"  [label = "Café"];
+  "11:50" -> "13:40"  [label = "✓ Boulot"];
+  "13:40" -> "14:00"  [label = "Repas"];
+  "14:00" -> "14:45"  [label =  "✓ Boulot"];
+  "14:45" -> "15:00"  [label = "Discord"];
+  "15:00" -> "16:40"  [label = "✓ Boulot"];
+  "16:40" -> "18:40"  [label = "HearthStone"];
+  "18:40" -> "22:15"  [label = "✓ Boulot"];
+
+  node [shape = box];
+  {rank = same; "11:00" -> "Réveil"};
+  {rank = same; "11:45" -> "Debout"};
+}

@@ -8,7 +8,6 @@ digraph "2023-11-22" {
   "14:50" -> "20:25" [label = "✓ Boulot"];
   "20:25" -> "21:45" [label = "Semi boulot (vidéos sur le côté pour décompresser)"];
 
-
   node [shape = box];
   {rank = same; "10:00" -> "Réveil"};
   {rank = same; "11:00" -> "Debout"};

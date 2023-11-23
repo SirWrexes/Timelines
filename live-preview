@@ -23,7 +23,7 @@ while true; do
   clear
   git generate
   kitty +kitten icat ${1}/graph.png
-  inotifywait -e modify **/*.dot
+  inotifywait -e create,modify **/*.dot
 done
 
 trap - SIGINT
